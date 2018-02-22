@@ -13,7 +13,6 @@ namespace AspNet.Core.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(256)]
         public string Email { get; set; }
 
         [Required]

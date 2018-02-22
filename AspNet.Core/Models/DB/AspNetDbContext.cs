@@ -24,6 +24,15 @@ namespace AspNet.Core.Models.DB
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Dado> Dados { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<Dado>()
+                .HasRequired(x => x.Cliente);
+
+        }
+
     }
 
     //public class MyEntity
