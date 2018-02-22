@@ -18,6 +18,8 @@ namespace AspNet.Core.Models
         [Required]
         public string Senha { get; set; }
 
-        // public virtual Dado Dado { get; set; }
+        public virtual Dado Dado { get; set; }
+        public virtual Endereco Endereco { get; set; }
+
     }
 }
