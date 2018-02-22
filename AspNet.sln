@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Core", "AspNet.Core\AspNet.Core.csproj", "{5DC9B633-E6BA-467E-90DD-EB0638FCFDCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Debug", "AspNet.Debug\AspNet.Debug.csproj", "{8D869BBB-3C61-4460-BCFE-F105FAB1A6DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5DC9B633-E6BA-467E-90DD-EB0638FCFDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DC9B633-E6BA-467E-90DD-EB0638FCFDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DC9B633-E6BA-467E-90DD-EB0638FCFDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D869BBB-3C61-4460-BCFE-F105FAB1A6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D869BBB-3C61-4460-BCFE-F105FAB1A6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D869BBB-3C61-4460-BCFE-F105FAB1A6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D869BBB-3C61-4460-BCFE-F105FAB1A6DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
