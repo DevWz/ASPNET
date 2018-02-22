@@ -107,10 +107,33 @@ namespace AspNet.Debug
             };
             */
 
+            /*
             Cliente cliente = manager.Clientes.Single(x => x.Id.Equals(1));
             manager.Clientes.Remove(cliente);
+            */
 
-            // manager.Clientes.Add(cliente);
+            Cliente cliente = new Cliente()
+            {
+                Email = "mail@mail.com",
+                Senha = "123",
+                Dado = new Dado()
+                {
+                    Nome = "DevWz",
+                    CPF = "00000000000",
+                    Fone = "19999999999"
+                },
+                Endereco = new Endereco()
+                {
+                    Logradouro = "Av Dez",
+                    N = "10",
+                    Bairro = "Centro",
+                    Cidade = "São Paulo",
+                    UF = "SP",
+                    CEP = "00000000"
+                }
+            };
+
+            manager.Clientes.Add(cliente);
             // manager.Dados.Add(dado);
             manager.SaveChanges();
 
