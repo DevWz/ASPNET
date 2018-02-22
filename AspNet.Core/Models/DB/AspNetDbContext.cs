@@ -1,5 +1,6 @@
 using System;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 
 namespace AspNet.Core.Models.DB
@@ -24,12 +25,38 @@ namespace AspNet.Core.Models.DB
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Dado> Dados { get; set; }
+        public virtual DbSet<Endereco> Enderecos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Cliente>()
+                .HasOptional(x => x.Dado) // Dado opcional para Cliente
+                .WithRequired(x => x.Cliente) // Cliente obrigatorio para Dado
+                .WillCascadeOnDelete(); // Se Cliente for deletado, deleta todos Dados associados
+
+            modelBuilder.Entity<Cliente>()
+                .HasOptional(x => x.Endereco) // Endereco opcional para Cliente
+                .WithRequired(x => x.Cliente) // Cliente obrigatorio para Endereco
+                .WillCascadeOnDelete(); // Se Cliente for deletado, deleta todos Enderecos associado
+
+            // Será utilizado na tabela Pedidos
+            /*
+            modelBuilder.Entity<Fone>()
+                .HasRequired<Cliente>(x => x.Cliente) // Cliente obrigatorio para Fone
+                .WithMany(x => x.Fones) // Multiplos registros permitidos
+                .HasForeignKey<int>(x => x.IdCliente); // FK de Fone para Cliente
+            */
+
+            modelBuilder.Entity<Cliente>()
+                .ToTable("Clientes");
 
             modelBuilder.Entity<Dado>()
-                .HasRequired(x => x.Cliente);
+                .ToTable("Dados");
+
+            modelBuilder.Entity<Endereco>()
+                .ToTable("Enderecos");
 
         }
 
